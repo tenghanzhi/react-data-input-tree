@@ -12,6 +12,9 @@
 .parent-label {
   display: inline-flex;
   align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333; /* Ensure this matches other labels */
 }
 
 .question-mark {
