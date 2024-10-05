@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
 import FieldInput from "./FieldInput";
+import formatLabel from "../utils/formatLabel";
 import "./style/TreeNode.css";
 
 const TreeNode = ({ label, fields, data, onChange, expandable = true }) => {
@@ -16,7 +17,7 @@ const TreeNode = ({ label, fields, data, onChange, expandable = true }) => {
         <li className="tree-node-item" key={key}>
           {Array.isArray(fieldType) ? (
             <FieldInput
-              label={key}
+              label={formatLabel(key)}
               type="dropdown"
               value={data[key]}
               options={fieldType}
@@ -24,7 +25,7 @@ const TreeNode = ({ label, fields, data, onChange, expandable = true }) => {
             />
           ) : typeof fieldType === "object" ? (
             <TreeNode
-              label={key}
+              label={formatLabel(key)}
               fields={fieldType}
               data={data[key] || {}}
               onChange={(subKey, val) =>
@@ -33,7 +34,7 @@ const TreeNode = ({ label, fields, data, onChange, expandable = true }) => {
             />
           ) : (
             <FieldInput
-              label={key}
+              label={formatLabel(key)}
               type={fieldType}
               value={data[key]}
               onChange={(val) => onChange(key, val)}
