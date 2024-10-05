@@ -20,14 +20,29 @@ export default function App() {
   const handleImport = (e) => {
     const file = e.target.files[0];
     const reader = new FileReader();
+
     reader.onload = (event) => {
       try {
         const importedData = JSON.parse(event.target.result);
-        setData(importedData);
+
+        if (
+          typeof importedData === "object" &&
+          importedData.hasOwnProperty("parent") &&
+          importedData.hasOwnProperty("components") &&
+          typeof importedData.parent === "string" &&
+          typeof importedData.components === "object"
+        ) {
+          setData(importedData);
+        } else {
+          alert(
+            "Invalid JSON format. Make sure the file has 'parent' and 'components' keys."
+          );
+        }
       } catch (error) {
-        alert("Invalid JSON file");
+        alert("Invalid JSON file.");
       }
     };
+
     reader.readAsText(file);
   };
 
