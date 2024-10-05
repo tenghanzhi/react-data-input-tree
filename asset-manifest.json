@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-data-input-tree/static/css/main.525aac4c.css",
-    "main.js": "/react-data-input-tree/static/js/main.b8cfb8b1.js",
+    "main.js": "/react-data-input-tree/static/js/main.f1ad3897.js",
     "index.html": "/react-data-input-tree/index.html",
     "main.525aac4c.css.map": "/react-data-input-tree/static/css/main.525aac4c.css.map",
-    "main.b8cfb8b1.js.map": "/react-data-input-tree/static/js/main.b8cfb8b1.js.map"
+    "main.f1ad3897.js.map": "/react-data-input-tree/static/js/main.f1ad3897.js.map"
   },
   "entrypoints": [
     "static/css/main.525aac4c.css",
-    "static/js/main.b8cfb8b1.js"
+    "static/js/main.f1ad3897.js"
   ]
 }
