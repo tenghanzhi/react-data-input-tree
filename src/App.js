@@ -25,17 +25,19 @@ export default function App() {
       try {
         const importedData = JSON.parse(event.target.result);
 
+        // Validate the structure of the JSON
         if (
           typeof importedData === "object" &&
           importedData.hasOwnProperty("parent") &&
           importedData.hasOwnProperty("components") &&
-          typeof importedData.parent === "string" &&
+          (typeof importedData.parent === "string" ||
+            typeof importedData.parent === "object") && // Allow string or object
           typeof importedData.components === "object"
         ) {
           setData(importedData);
         } else {
           alert(
-            "Invalid JSON format. Make sure the file has 'parent' and 'components' keys."
+            "Invalid JSON format. Make sure the file has 'parent' (string or object) and 'components' keys."
           );
         }
       } catch (error) {
