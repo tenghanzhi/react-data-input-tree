@@ -2,7 +2,7 @@ import React, { useState, useMemo } from "react";
 import FieldInput from "./FieldInput";
 import "./style/TreeNode.css";
 
-const TreeNode = ({ label, fields, data, onChange }) => {
+const TreeNode = ({ label, fields, data, onChange, expandable = true }) => {
   const [collapsed, setCollapsed] = useState(false);
 
   const handleToggle = () => {
@@ -47,7 +47,9 @@ const TreeNode = ({ label, fields, data, onChange }) => {
   return (
     <div className="tree-node">
       <div className="tree-node-summary" onClick={handleToggle}>
-        <span className="toggle-icon">{collapsed ? "▶" : "▼"}</span>
+        {expandable && (
+          <span className="toggle-icon">{collapsed ? "▶" : "▼"}</span>
+        )}
         <span>{label}</span>
       </div>
       {!collapsed && <ul className="tree-node-list">{renderSubNodes}</ul>}

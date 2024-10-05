@@ -41,7 +41,7 @@
 
 .field-input input:focus,
 .field-input select:focus {
-  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+  box-shadow: 0 0 8px #0073a4;
 }
 
 input[type="checkbox"] {

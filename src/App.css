@@ -40,3 +40,32 @@ pre {
     transform: translateZ(0);
   }
 }
+
+.json-actions {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.export-btn,
+.custom-file-upload {
+  background-color: #0073a4;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.export-btn:hover,
+.custom-file-upload:hover {
+  background-color: #0073a4;
+}
+
+input[type="file"] {
+  display: none;
+}
