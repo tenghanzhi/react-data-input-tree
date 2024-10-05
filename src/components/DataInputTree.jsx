@@ -6,16 +6,18 @@ import formatLabel from "../utils/formatLabel";
 const DataInputTree = ({ schema, data, onDataChange }) => {
   const handleFieldChange = (key, value, isParent = false) => {
     if (isParent) {
-      onDataChange({ ...data, parent: value });
+      onDataChange((prevData) => ({
+        ...prevData,
+        parent: value,
+      }));
     } else {
-      const updatedData = {
-        ...data,
+      onDataChange((prevData) => ({
+        ...prevData,
         [key]: {
-          ...data[key],
+          ...prevData[key],
           ...value,
         },
-      };
-      onDataChange(updatedData);
+      }));
     }
   };
 
