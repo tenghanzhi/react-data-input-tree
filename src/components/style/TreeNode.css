@@ -1,0 +1,72 @@
+.tree-node {
+  position: relative;
+}
+
+.tree-node-summary {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  padding-left: 10px;
+  color: #444;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.toggle-icon {
+  margin-right: 10px;
+  font-size: 12px;
+}
+
+.tree-node-list {
+  list-style: none;
+  padding-left: 20px;
+  margin-left: 10px;
+  border-left: 1px solid black;
+}
+
+.tree-node-item {
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.tree-node-item.single {
+  border-left: none;
+  margin-left: 0;
+}
+
+.tree-node-item.single label {
+  font-weight: bold;
+}
+
+.tree-node-item::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: -20px;
+  width: 12px;
+  height: 1px;
+  border-bottom: 1px solid black;
+}
+
+.tree-node-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -20px;
+  height: 100%;
+  border-left: 1px solid #ccc;
+}
+
+.tree-node-item:last-child::after {
+  height: 12px;
+}
+
+.tree-node-item:nth-child(odd) {
+  background-color: #f8f8f8;
+}
+
+.tree-node-item:nth-child(even) {
+  background-color: #ffffff;
+}

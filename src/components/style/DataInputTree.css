@@ -1,0 +1,35 @@
+.data-input-tree {
+  padding: 20px;
+}
+
+.data-input-tree h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.parent-label {
+  display: inline-flex;
+  align-items: center;
+}
+
+.question-mark {
+  margin: 0px 10px;
+  font-size: 14px;
+  color: grey;
+  cursor: help;
+}
+
+.question-mark:hover::after {
+  content: "What is this?";
+  position: absolute;
+  background-color: #555;
+  color: white;
+  padding: 5px;
+  border-radius: 4px;
+  top: 25px;
+  left: 0;
+  z-index: 1;
+  white-space: nowrap;
+}
