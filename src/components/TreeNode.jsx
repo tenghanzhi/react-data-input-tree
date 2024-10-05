@@ -3,7 +3,6 @@ import FieldInput from "./FieldInput";
 import "./style/TreeNode.css";
 
 const TreeNode = ({ label, fields, data, onChange }) => {
-  console.log({ label, fields, data });
   const [collapsed, setCollapsed] = useState(false);
 
   const handleToggle = () => {

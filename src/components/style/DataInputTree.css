@@ -33,3 +33,17 @@
   z-index: 1;
   white-space: nowrap;
 }
+
+.field-input select:focus {
+  animation: bounce 0.4s ease-out;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}

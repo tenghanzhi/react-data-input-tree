@@ -16,4 +16,27 @@ pre {
   width: 100%;
   max-width: 800px;
   margin-left: 0;
+  opacity: 0;
+  animation: fadeInPre 0.8s ease forwards;
+  transition: opacity 0.8s ease;
+}
+
+.data-input-tree {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInPre {
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
 }
