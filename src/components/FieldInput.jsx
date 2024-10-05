@@ -19,7 +19,14 @@ const FieldInput = ({
           <input
             type="number"
             value={value || 0}
-            onChange={(e) => onChange(Number(e.target.value))}
+            onChange={(e) => {
+              onChange(Number(e.target.value.replace(/^0+(?=\d)/, "")));
+            }}
+            onBlur={(e) => {
+              const cleanValue = Number(e.target.value);
+              e.target.value = cleanValue;
+              onChange(cleanValue);
+            }}
             min={0}
             {...inputProps}
           />
