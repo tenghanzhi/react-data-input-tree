@@ -4,6 +4,51 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # Page Link: https://tenghanzhi.github.io/react-data-input-tree/
 
+# Task
+Create a React component that takes in a data schema definition in JSON and renders a data input tree in the style as shown in the above image.
+
+
+An example data schema definition (a simplified subset of the schema for the above image):
+
+`{
+
+    "parent": "string",
+
+    "components": {
+
+        "unit": {
+
+            "unitType": [ "UNIT", "MISSILE", "STRUCTURE" ]
+
+        },
+
+        "unitStats": {
+
+            "radius": "number",
+
+            "invulnerable": "boolean",
+
+            "ground": "boolean"
+
+        }
+
+    }
+
+}`
+
+# Requirements
+The implementation should be able to accept any valid data schema defined in JSON and render a tree according to the schema. There is no limit on the tree’s depth and different tree branches can have different depths.
+The rendered data input tree should match the style in the given image as closely as possible (including size, color, padding, decorations, etc). Note that the input tree in the image uses a more complex schema definition than what’s given in this test and your implementation is expected to have a few differences from the image. Things that are not apparent from the image:
+Each line should alternate in background color for readability.
+Subtrees are collapsible.
+Support the following field data types: string, number, boolean and dropdown. In the data schema, dropdown is represented as a list of string values (such as the “unitType” field in the example schema).
+# Optional Challenges
+These are not requirements but should also be taken into consideration when you implement the input tree:
+
+Create reusable and customizable sub-components.
+The input tree should be able to import/export data in JSON format.
+Be able to handle a very large input tree efficiently (e.g., a data schema with more than 1000 fields).
+
 ## Available Scripts
 
 In the project directory, you can run:
